@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="main-id">News</h1>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+
+        //5
+        // let clickHandler = function (event) {
+        //     console.log("Click " + event.pageX + " " + event.pageY);
+        // };
+        // $("h1").click(clickHandler)
+
+
+        $("html").click(function (event) {
+            $("h1").offset({
+                left: event.pageX,
+                top: event.pageY
+            });
+
+        });
+    </script>
+</body </html>

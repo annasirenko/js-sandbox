@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing with DOM</title>
+</head>
+
+<body>
+    <h1 id="friends-list">Hello</h1>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    <script>
+        $("#friends-list").text("My friends");
+        let friends = ["Andy", "Carol", "Mike"];
+        for (i = 0; i < friends.length; i++) {
+            $("body").append("<p>" + friends[i] + "</p>");
+            $("p").last().hide().fadeIn((i + 1) * 10000);
+        }
+        $("p").append(" smells");
+        // $("p").fadeIn(1000).hide(1000);
+
+
+
+    </script>
+
+</body>
+
+</html>
