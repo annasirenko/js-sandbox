@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <img src="./car.png" alt="" class="car"> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+        //1
+        // let dog = {
+        //     //     name: 123,
+        //     //     surname: 1234
+        //     // };
+        //     // dog.age = 16;
+        //     // dog.bark = function () {
+        //     //     alert("woof " + this.age);
+        //     // };
+        //     // dog.bark();
+
+        // //2 
+        // let speak = function () {
+        //     alert(this.sound + " ! My name is " + this.name + " !");
+        // };
+        // let cat = {
+        //     name: "Mittens",
+        //     sound: "Meow",
+        //     speak: speak
+        // };
+        // let pig = {
+        //     name: "Kenny",
+        //     sound: "Oink",
+        //     speak: speak
+        // };
+        // let horse = {
+        //     name: "Ribby",
+        //     sound: "Neigh",
+        //     speak: speak
+        // };
+        // cat.speak();
+        // horse.speak();
+        // pig.speak();
+
+        //3 
+        // let Car = function (x, y) {
+        //     this.x = x;
+        //     this.y = y;
+        // };
+        // let tesla = new Car(10, 20);
+        // console.log(tesla);
+
+        //4
+        // let Car = function (x, y) {
+        //     this.x = x;
+        //     this.y = y;
+        // };
+        // let drawCar = function (car) {
+        //     let carHtml = '<img src="./car.png">';
+        //     let carElement = $(carHtml);
+        //     carElement.css({
+        //         position: "absolute",
+        //         left: car.x,
+        //         top: car.y
+        //     });
+        //     $("body").append(carElement);
+
+        //     let tesla = new Car(20, 20);
+        //     let nissan = new Car(100, 200);
+
+        //     drawCar(tesla);
+        //     drawCar(nissan);
+        // };
+
+        //5
+        let Car = function (x, y) {
+            this.x = x;
+            this.y = y;
+            this.draw();
+        };
+        Car.prototype.draw = function () {
+            let carHtml = '<img src="./car.png">';
+            this.carElement = $(carHtml);
+            this.carElement.css({
+                position: "absolute",
+                left: this.x,
+                top: this.y
+            });
+            $("body").append(this.carElement);
+        };
+
+
+        Car.prototype.moveRight = function () {
+            this.x += 5;
+
+            this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        Car.prototype.moveLeft = function () {
+            this.x -= 5;
+
+            this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        Car.prototype.moveUp = function () {
+            this.y -= 5;
+
+            this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        Car.prototype.moveDown = function () {
+            this.y += 5;
+
+            this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+        let tesla = new Car(20, 20);
+        let nissan = new Car(100, 200);
+
+
+
+        // tesla.draw();
+        // nissan.draw();
+
+
+        //6
+        // let Car = function (x, y) {
+        //     this.x = x;
+        //     this.y = y;
+
+        // };
+        // Car.prototype.draw = function () {
+        //     let carHtml = '<img src="./car.png">';
+        //     this.carElement = $(carHtml);
+        //     this.carElement.css({
+        //         position: "absolute",
+        //         left: this.x,
+        //         top: this.y
+        //     });
+        //     $("body").append(this.carElement);
+        // };
+        // let tesla = new Car(20, 20);
+        // let nissan = new Car(100, 200);
+
+
+        // Car.prototype.moveRight = function () {
+        //     this.carElement.css({
+        //         left: this.x,
+        //         top: this.y
+        //     });
+        // }
+
+
+
+        // var Car = function (x, y) {
+        //     this.x = x;
+        //     this.y = y;
+        //     this.draw();
+        // };
+
+        // Car.prototype.draw = function () {
+        //     var carHtml = '<img src="./car.png">';
+
+        //     this.carElement = $(carHtml);
+
+        //     this.carElement.css({
+        //         position: "absolute",
+        //         left: this.x,
+        //         top: this.y
+        //     });
+
+        //     $("body").append(this.carElement);
+        // };
+
+        // Car.prototype.moveRight = function () {
+        //     this.x += 5;
+
+        //     this.carElement.css({
+        //         left: this.x,
+        //         top: this.y
+        //     });
+        // };
+
+        // Car.prototype.moveLeft = function () {
+        //     this.x -= 5;
+
+        //     this.carElement.css({
+        //         left: this.x,
+        //         top: this.y
+        //     });
+        // };
+
+        // Car.prototype.moveUp = function () {
+        //     this.y -= 5;
+
+        //     this.carElement.css({
+        //         left: this.x,
+        //         top: this.y
+        //     });
+        // };
+
+        // Car.prototype.moveDown = function () {
+        //     this.y += 5;
+
+        //     this.carElement.css({
+        //         left: this.x,
+        //         top: this.y
+        //     });
+        // };
+
+        // var tesla = new Car(20, 20);
+        // var nissan = new Car(100, 200);
+    </script>
+</body>
+
+</html>
