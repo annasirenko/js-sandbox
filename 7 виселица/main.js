@@ -8,7 +8,7 @@
 //   console.log("no");
 // }
 
-"Виселица";
+// "Виселица";
 
 let words = ["javascript", "monkey", "amazing", "pancake"];
 let word = words[Math.floor(Math.random() * words.length)];
