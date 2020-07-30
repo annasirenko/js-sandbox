@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    <script>
+        //1
+        // let keyNames = {
+        //     32: "space",
+        //     37: "left",
+        //     38: "up",
+        //     39: "right",
+        //     40: "down"
+        // };
+
+        // $("body").keydown(function (event) {
+        //     console.log(keyNames[event.keyCode]);
+        // });
+
+        //2
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        let width = canvas.width;
+        let height = canvas.height;
+
+        let circle = function (x, y, radius, fillCircle) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+            if (fillCircle) {
+                ctx.fill();
+            } else {
+                ctx.stroke();
+            }
+        };
+
+        let Ball = function () {
+            this.x = width / 2;
+            this.y = height / 2;
+            this.xSpeed = 5;
+            this.ySpeed = 0;
+        };
+
+        Ball.prototype.move = function () {
+            this.x += this.xSpeed;
+            this.y += this.ySpeed;
+
+            if (this.x < 0) {
+                this.x = width;
+            } else if (this.x > width) {
+                this.x = 0;
+            }
+            if (this.y < 0) {
+                this.y = height;
+            } else if (this.y > height) {
+                this.y = 0;
+            }
+        };
+
+
+
+
+    </script>
+</body>
+
+</html>
